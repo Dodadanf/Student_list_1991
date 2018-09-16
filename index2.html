@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Studentlist 1991</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1 class="overskrift">Studentlist 1991</h1>
+
+    <section id="buttons">
+        <div id="sorting">
+            Sort by:
+            <button id="sort_first">First name</button>
+            <button id="sort_last">Last name</button>
+        </div>
+    </section>
+
+    <section class="studentlist">
+
+    </section>
+
+    <!--template til hver student på listen-->
+
+    <template id="student_template">
+
+        <div class="names">
+            <button class="delete">Delete</button>
+            <div class="collapsible" onclick="collapFunction()">
+                <h2 class="fullname" data-fullname>Emer</h2>
+            </div>
+            <div class="content">
+                <p data-details>sdasadasdasdasdasdasdasdasdas </p>
+            </div>
+
+        </div>
+
+    </template>
+
+    <script src="script2.js"></script>
+    <script src="frontend2.js"></script>
+    <script>
+        function collapFunction() {
+
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
