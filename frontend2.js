@@ -107,30 +107,6 @@ function clickedSortLastname() {
     displayList(currentStudents);
 }
 
-function clickedSortHouse() {
-    console.log("clickedSortHouse");
-    sortByHouse();
-    displayList(currentStudents);
-}
-
-/*function clickedFilter(event) {
-    console.log("clickedFilter");
-    const filter = this.dataset.filter; // references data-filter="____"
-    console.log(event);
-    event.preventDefault();
-
-    // create a list of filtered students by house
-
-    // if filter === all, let the list be all students
-    if (filter === "all") {
-        currentStudents = allStudents;
-        displayList(currentStudents);
-    } else {
-        currentStudents = filterByHouse(filter);
-        displayList(currentStudents);
-    }
-}*/
-
 function displayList(listOfStudents) {
     console.log("Display list");
     // clear the table
